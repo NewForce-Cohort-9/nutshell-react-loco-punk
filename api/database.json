@@ -1,9 +1,55 @@
 {
-    "users": [],
-    "articles": [],
-    "messages": [],
-    "events": [],
-    "tasks": [],
-    "images": [],
-    "friends": []
+    "users": 
+    [{ "id": 1, "username": "Dan Miller", "email": "dan@lp.com" },
+    { "id": 2, "username": "Andrew Wells", "email": "andrew@lp.com" },
+    { "id": 3, "username": "Abby Trombley", "email": "abby@lp.com" },
+    { "id": 4, "username": "Will Moran", "email": "will@lp.com" }],
+
+    "articles": 
+    [{
+      "id": 1,
+      "userId": 2,
+      "url": "https://www.quantamagazine.org/newfound-wormhole-allows-information-to-escape-black-holes-20171023/",
+      "title": "Wormholes Allow Information to Escape Black Holes",
+      "synopsis": "Check out this recent discovery about workholes"
+    },
+    {
+    "id": 2,
+    "userId": 3,
+    "url": "https://www.nytimes.com/2024/02/06/style/monster-jam-trucks.html",
+    "title": "Monster Jam Trucks",
+    "synopsis": "These trucks are sick!"
+   },
+   {
+  "id": 3,
+  "userId": 4,
+  "url": "https://www.newyorker.com/magazine/2023/08/21/when-trucks-fly",
+  "title": "Trucks that Fly",
+  "synopsis": "Trucks that fly? Alright."
+   }],
+
+    "messages": 
+    [{ "id": 1, "userId": 1, "message": "What's up?" },
+    { "id": 2, "userId": 3, "message": "Hey!" },
+    { "id": 3, "userId": 4, "message": "This site is so cool lol :D" }],
+
+    "events": 
+    [{ "id": 1, "userId": 3, "event": "Dinner with Grandma", "date": "6/6/2024" },
+    { "id": 2, "userId": 2, "event": "LAN Party with Jerry", "date": "6/9/2024" },
+    { "id": 3, "userId": 4, "event": "Band practice", "date": "6/10/2024" }],
+
+    "tasks": 
+    [{ "id": 1, "userId": 3, "task": "Take out garbage" },
+    { "id": 2, "userId": 2, "task": "Cut Grass" },
+    { "id": 3, "userId": 4, "task": "Clean Kitchen" }],
+
+    "images": 
+    [{ "id": 1, "userId": 3, "url": "https://img.freepik.com/free-photo/kitten-playing-with-ball-wool_188544-7879.jpg", "caption": "OMG look at that cat" },
+    { "id": 2, "userId": 4, "url": "https://media.gettyimages.com/id/2030700486/photo/lovely-cheerful-girl-enjoying-meal-with-family-in-a-local-japanese-restaurant-during-vacation.jpg?s=2048x2048&w=gi&k=20&c=bqPKB1cBtWiHEs5kBomH2N5mO_OLc0Koy2hLp2EbOE4=", "caption": "She's so happy" },
+    { "id": 3, "userId": 3, "url": "https://media.gettyimages.com/id/1369119153/photo/white-water-rafting-on-the-trisuli-river-in-nepal.jpg?s=2048x2048&w=gi&k=20&c=iGaL3JKxUyeGX-4MFfhl0XZ0Ux0j9WieDhl8uI8faoQ=", "caption": "This looks dangerous!" }],
+
+    "friends": 
+    [{ "id": 1, "userId": 1, "loggedInUserId": 2 },
+    { "id": 2, "userId": 2, "loggedInUserId": 3 },
+    { "id": 3, "userId": 3, "loggedInUserId": 4 }]
   }
