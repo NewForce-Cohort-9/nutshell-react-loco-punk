@@ -15,6 +15,6 @@ export const Dashboard = () => {
     }, [allArticles])
 
     return (
-        
+        <div>hello</div>
     )
 }
