@@ -5,9 +5,11 @@ export const getAllMessages = () => {
 //Should be on app.jsx
 import { useState, useEffect } from "react"
 import { getAllChats } from "./services/messageService"
+//import css
 
 export const App = () => {
     const [allMessages, setAllMessages] = useState([])
+    const [makeEdit, setMakeEdit] = useState([])
 
     useEffect(() => {
         getAllMessages().then((messagesArray) => {
@@ -18,6 +20,9 @@ export const App = () => {
     return (
         <div className="chat-container">
             <h2>Messages</h2>
+            <div>
+                <button className="edit-btn">Edit</button>
+            </div>
             <article className="chats">
                 {allMessages.map(message => {
                     return (
