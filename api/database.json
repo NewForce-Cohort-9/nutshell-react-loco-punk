@@ -23,25 +23,31 @@
   ],
   "articles": [
     {
-      "id": 1,
-      "userId": 2,
-      "url": "https://www.quantamagazine.org/newfound-wormhole-allows-information-to-escape-black-holes-20171023/",
       "title": "Wormholes Allow Information to Escape Black Holes",
-      "synopsis": "Check out this recent discovery about workholes"
-    },
-    {
-      "id": 2,
-      "userId": 3,
-      "url": "https://www.nytimes.com/2024/02/06/style/monster-jam-trucks.html",
-      "title": "Monster Jam Trucks",
-      "synopsis": "These trucks are sick!"
-    },
-    {
-      "id": 3,
+      "synopsis": "Check out this recent discovery about wormholes",
+      "url": "https://www.quantamagazine.org/newfound-wormhole-allows-information-to-escape-black-holes-20171023/",
       "userId": 4,
-      "url": "https://www.newyorker.com/magazine/2023/08/21/when-trucks-fly",
+      "time": "9:20:25 AM",
+      "date": "6/5/2024",
+      "id": 1
+    },
+    {
+      "title": "Monster Jam Trucks",
+      "synopsis": "These trucks are sick!",
+      "url": "https://www.nytimes.com/2024/02/06/style/monster-jam-trucks.html",
+      "userId": 4,
+      "time": "9:21:20 AM",
+      "date": "6/5/2024",
+      "id": 2
+    },
+    {
       "title": "Trucks that Fly",
-      "synopsis": "Trucks that fly? Alright."
+      "synopsis": "Trucks that fly? Alright.",
+      "url": "https://www.newyorker.com/magazine/2023/08/21/when-trucks-fly",
+      "userId": 4,
+      "time": "9:21:40 AM",
+      "date": "6/5/2024",
+      "id": 3
     }
   ],
   "messages": [

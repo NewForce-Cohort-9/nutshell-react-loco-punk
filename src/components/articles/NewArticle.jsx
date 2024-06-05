@@ -2,13 +2,20 @@ import { useState } from "react"
 import { addNewArticle } from "../../services/articleServices.jsx"
 
 export const NewArticle = ({ currentUser }) => {
-    const [article, setArticle] = useState({ title: "", synopsis: "", url: "", userId: currentUser })
+    const [article, setArticle] = useState({ title: "", synopsis: "", url: "", userId: currentUser, time: "", date: "" })
 
-    const handleArticleCreation = () => {
+    const handleArticleCreation = (event) => {
         if (!article.title || !article.synopsis || !article.url) {
             window.alert("Please enter a title, synopsis, and url for your article")
         } else {
-            addNewArticle(article)
+            const time = new Date().toLocaleTimeString()
+            const date = new Date().toLocaleDateString()
+
+            const articleCopy = {...article}
+            articleCopy.time = time
+            articleCopy.date = date
+
+            addNewArticle(articleCopy)
         }
     }
 
