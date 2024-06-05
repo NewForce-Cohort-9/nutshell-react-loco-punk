@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Outlet, Route, Routes } from "react-router-dom"
 import { Dashboard } from "../components/dashboard/Dashboard.jsx"
 import { AllArticles } from "../components/articles/AllArticles.jsx"
+import { NavBar } from "../components/Chat/Nav/NavBar.jsx"
 
 export const ApplicationViews = () => {
     const [currentUser, setCurrentUser] = useState({})
@@ -16,6 +17,7 @@ export const ApplicationViews = () => {
                 path="/"
                 element={
                     <>
+                        <NavBar />
                         <Outlet />
                     </>
                 }
