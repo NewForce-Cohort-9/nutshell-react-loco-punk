@@ -6,13 +6,16 @@ import { Route, Routes } from 'react-router-dom'
 import { ApplicationViews } from './views/ApplicationViews.jsx'
 
 
+
+
+
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <Routes>
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} /> 
+      {/* <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />  */}
 
       <Route path="*" element={
         <ApplicationViews />
