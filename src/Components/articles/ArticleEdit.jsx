@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { getArticleById, updateArticle } from "../../Services/articleServices.jsx"
+import "./Articles.css"
 
 export const ArticleEdit = () => {
     const [article, setArticle] = useState({})
@@ -33,9 +34,9 @@ export const ArticleEdit = () => {
     }
     
     return (
-        <form>
+        <form className="articleForm">
             <h2>Edit Article</h2>
-            <fieldset>
+            <fieldset className="noBorder">
                 <div>
                     <label>Title:</label>
                     <input
@@ -49,7 +50,7 @@ export const ArticleEdit = () => {
                     />
                 </div>
             </fieldset>
-            <fieldset>
+            <fieldset className="noBorder">
                 <div>
                     <label>Synopsis:</label>
                     <input 
@@ -63,7 +64,7 @@ export const ArticleEdit = () => {
                     />
                 </div>
             </fieldset>
-            <fieldset>
+            <fieldset className="noBorder">
                 <div>
                     <label>URL:</label>
                     <input
@@ -77,7 +78,7 @@ export const ArticleEdit = () => {
                     />
                 </div>
             </fieldset>
-            <fieldset>
+            <fieldset className="noBorder">
                 <div>
                     <button onClick={handleArticleEdit}>Save</button>
                 </div>
