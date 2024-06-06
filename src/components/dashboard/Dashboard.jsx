@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getAllArticles } from "../../services/articleServices.jsx"
+import { getAllArticles } from "../../Services/articleServices.jsx"
 
 export const Dashboard = () => {
     const [allArticles, setAllArticles] = useState([])

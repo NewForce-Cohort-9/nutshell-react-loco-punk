@@ -8,11 +8,16 @@ import {
   DropdownMenu,
   DropdownItem,
 } from 'reactstrap';
+import { Login } from '../../auth/Login.jsx';
+import { useNavigate } from 'react-router-dom';
 
 export const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
+
+  const navigate = useNavigate()
+
 
   return (
     <div>
@@ -27,6 +32,7 @@ export const NavBar = () => {
                 <DropdownItem>Images</DropdownItem>
                 <DropdownItem>Events</DropdownItem>
                 <DropdownItem>Messages</DropdownItem>
+                <DropdownItem onClick={() => {navigate("/login")}}>Login</DropdownItem>
                 <DropdownItem divider />
               </DropdownMenu>
             </UncontrolledDropdown>
