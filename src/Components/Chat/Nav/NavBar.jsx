@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   Collapse,
   Navbar,
@@ -14,6 +15,8 @@ export const NavBar = () => {
 
   const toggle = () => setIsOpen(!isOpen);
 
+  const navigate =useNavigate()
+
   return (
     <div>
       <Navbar>
@@ -26,7 +29,7 @@ export const NavBar = () => {
                 <DropdownItem>Tasks</DropdownItem>
                 <DropdownItem>Images</DropdownItem>
                 <DropdownItem>Events</DropdownItem>
-                <DropdownItem>Messages</DropdownItem>
+                <DropdownItem onClick={()=>{navigate("/messages")}}>Messages</DropdownItem>
                 <DropdownItem divider />
               </DropdownMenu>
             </UncontrolledDropdown>

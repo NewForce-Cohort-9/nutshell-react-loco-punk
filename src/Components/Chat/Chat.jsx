@@ -20,30 +20,34 @@
 
 //Should be on app.jsx
 import { useState, useEffect } from "react"
-import { getAllMessages } from "./services/messageService"
+import { getAllMessages } from "../../Services/messageService"
+import { useNavigate } from "react-router-dom"
+import "./chat.css"
 //import css
 
 export const Chat = () => {
     const [allMessages, setAllMessages] = useState([])
     const [makeEdit, setMakeEdit] = useState([])
 
+    const Navigate = useNavigate()
+
     useEffect(() => {
         getAllMessages().then((messagesArray) => {
-            console.log("chats")
+            setAllMessages(messagesArray)
         })
     }, [])
 
     return (
-        <div className="chat-container">
+        <div className="ticket-container">
             <h2>Messages</h2>
-            <div>
-                <button className="edit-btn">Edit</button>
-            </div>
-            <article className="chats">
+            <article className="tickets">
                 {allMessages.map(message => {
                     return (
-                        <section className="chats">
-                            <header className="chat-inside"> #{messages.message}</header>
+                        <section className="tickets">
+                            <header className="ticket-info">{message.message}</header>
+                            <div>
+                                 <button className="edit-btn" onClick={()=>{navigate("/messages/edit")}}>Edit</button>
+                            </div>
                         </section>
                     )
                 })}
