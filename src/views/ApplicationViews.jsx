@@ -6,14 +6,16 @@ import { AllArticles } from "../Components/articles/AllArticles.jsx"
 import { NewArticle } from "../Components/articles/NewArticle.jsx"
 import { Login } from "../Components/auth/Login.jsx"
 import { Register } from "../Components/auth/Register.jsx"
+import { ArticleEdit } from "../Components/articles/ArticleEdit.jsx"
 
 
 export const ApplicationViews = () => {
-    const [currentUser, setCurrentUser] = useState({})
+    // const [currentUser, setCurrentUser] = useState(0)
 
-    useEffect(() => {
-        setCurrentUser(4)
-    }, [])
+    // useEffect(() => {
+    //     setCurrentUser(4)
+    //     console.log(currentUser)
+    // }, [])
 
     return (
         <Routes>
@@ -39,7 +41,8 @@ export const ApplicationViews = () => {
 
                 <Route path="articles" >
                     <Route index element={<AllArticles />} />
-                    <Route path=":new" element={<NewArticle />} />
+                    <Route path="new" element={<NewArticle />} />
+                    <Route path=":articleId/edit" element={<ArticleEdit />} />
                 </Route>
                 
 
