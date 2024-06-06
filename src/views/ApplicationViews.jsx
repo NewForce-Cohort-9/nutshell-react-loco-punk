@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 import { Outlet, Route, Routes } from "react-router-dom"
+import { NavBar } from "../Components/Chat/Nav/NavBar.jsx"
 import { Dashboard } from "../Components/dashboard/Dashboard.jsx"
 import { AllArticles } from "../Components/articles/AllArticles.jsx"
-import { NavBar } from "../Components/Chat/Nav/NavBar.jsx"
+import { NewArticle } from "../Components/articles/NewArticle.jsx"
 import { Login } from "../Components/auth/Login.jsx"
 
 
@@ -25,10 +26,20 @@ export const ApplicationViews = () => {
                 }
             >
                 {/* <Route index element={<Dashboard />} /> */}
-                <Route path="articles" element={<AllArticles />} />
-                <Route path="login" element={<Login />} />
+                <Route index element={<Dashboard />} />
+                
+                <Route path="login">
+                    <Route index element={<Login />} />
+                </Route>
+
+
+                <Route path="articles" >
+                    <Route index element={<AllArticles />} />
+                    <Route path=":new" element={<NewArticle />} />
+                </Route>
+                
+
             </Route>
         </Routes>
     )
-
 }

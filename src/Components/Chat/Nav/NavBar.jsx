@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   Collapse,
   Navbar,
@@ -8,15 +9,15 @@ import {
   DropdownMenu,
   DropdownItem,
 } from 'reactstrap';
-import { Login } from '../../auth/Login.jsx';
-import { useNavigate } from 'react-router-dom';
+
 
 export const NavBar = () => {
+  const navigate = useNavigate()
+
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
 
-  const navigate = useNavigate()
 
 
   return (
@@ -27,7 +28,8 @@ export const NavBar = () => {
           <Nav className="me-auto" navbar>
             <UncontrolledDropdown nav inNavbar>
               <DropdownMenu right>
-                <DropdownItem>News</DropdownItem>
+                <DropdownItem onClick={() => {navigate("/")}}>Dashboard</DropdownItem>
+                <DropdownItem onClick={() => {navigate("/articles")}}>News</DropdownItem>
                 <DropdownItem>Tasks</DropdownItem>
                 <DropdownItem>Images</DropdownItem>
                 <DropdownItem>Events</DropdownItem>
