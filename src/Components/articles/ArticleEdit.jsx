@@ -1,10 +1,21 @@
-import { useState } from "react"
-import { addNewArticle } from "../../Services/articleServices.jsx"
+import { useEffect, useState } from "react"
+import { useNavigate, useParams } from "react-router-dom"
+import { getArticleById, updateArticle } from "../../Services/articleServices.jsx"
 
-export const NewArticle = ({ currentUser }) => {
-    const [article, setArticle] = useState({ title: "", synopsis: "", url: "", userId: currentUser, time: "", date: "" })
+export const ArticleEdit = () => {
+    const [article, setArticle] = useState({})
 
-    const handleArticleCreation = () => {
+    const navigate = useNavigate()
+
+    const {articleId} = useParams()
+
+    useEffect(() => {
+        getArticleById(articleId).then(articleObj => {
+            setArticle(articleObj)
+        })
+    }, [])
+
+    const handleArticleEdit = () => {
         if (!article.title || !article.synopsis || !article.url) {
             window.alert("Please enter a title, synopsis, and url for your article")
         } else {
@@ -15,19 +26,21 @@ export const NewArticle = ({ currentUser }) => {
             articleCopy.time = time
             articleCopy.date = date
 
-            addNewArticle(articleCopy)
+            updateArticle(articleCopy)
+
+            navigate("/articles")
         }
     }
-
+    
     return (
         <form>
-            <h2>Add A New Article</h2>
+            <h2>Edit Article</h2>
             <fieldset>
                 <div>
                     <label>Title:</label>
                     <input
                         type="text"
-                        placeholder="Article Title"
+                        value={article.title}
                         onChange={(event) => {
                             const articleCopy = {...article}
                             articleCopy.title = event.target.value
@@ -41,7 +54,7 @@ export const NewArticle = ({ currentUser }) => {
                     <label>Synopsis:</label>
                     <input 
                         type="text"
-                        placeholder="Article Synopsis"
+                        value={article.synopsis}
                         onChange={(event) => {
                             const articleCopy = {...article}
                             articleCopy.synopsis = event.target.value
@@ -55,7 +68,7 @@ export const NewArticle = ({ currentUser }) => {
                     <label>URL:</label>
                     <input
                         type="text"
-                        placeholder="Article URL"
+                        value={article.url}
                         onChange={(event) => {
                             const articleCopy = {...article}
                             articleCopy.url = event.target.value
@@ -66,7 +79,7 @@ export const NewArticle = ({ currentUser }) => {
             </fieldset>
             <fieldset>
                 <div>
-                    <button onClick={handleArticleCreation}>Save Article</button>
+                    <button onClick={handleArticleEdit}>Save</button>
                 </div>
             </fieldset>
         </form>
