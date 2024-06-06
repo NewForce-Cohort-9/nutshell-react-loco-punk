@@ -34,7 +34,7 @@ export const NavBar = () => {
                 <DropdownItem>Images</DropdownItem>
                 <DropdownItem>Events</DropdownItem>
                 <DropdownItem>Messages</DropdownItem>
-                <DropdownItem onClick={() => {navigate("/login")}}>Login</DropdownItem>
+                {localStorage.getItem("nutshell_user")? "" : <DropdownItem onClick={() => {navigate("/login")}}>Login</DropdownItem>}
                 <DropdownItem divider />
               </DropdownMenu>
             </UncontrolledDropdown>

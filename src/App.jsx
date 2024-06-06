@@ -4,8 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import { ApplicationViews } from './views/ApplicationViews.jsx'
-import { Login } from './Components/auth/Login.jsx'
-import { Register } from './Components/auth/Register.jsx'
+
 
 
 

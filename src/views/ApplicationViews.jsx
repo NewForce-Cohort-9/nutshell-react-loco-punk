@@ -5,6 +5,7 @@ import { Dashboard } from "../Components/dashboard/Dashboard.jsx"
 import { AllArticles } from "../Components/articles/AllArticles.jsx"
 import { NewArticle } from "../Components/articles/NewArticle.jsx"
 import { Login } from "../Components/auth/Login.jsx"
+import { Register } from "../Components/auth/Register.jsx"
 
 
 export const ApplicationViews = () => {
@@ -32,6 +33,9 @@ export const ApplicationViews = () => {
                     <Route index element={<Login />} />
                 </Route>
 
+                <Route path="register">
+                    <Route index element={<Register />} />
+                </Route>
 
                 <Route path="articles" >
                     <Route index element={<AllArticles />} />
