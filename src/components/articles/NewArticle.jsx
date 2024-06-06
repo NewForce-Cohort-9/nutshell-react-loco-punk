@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { addNewArticle } from "../Services/articleServices.jsx"
+import { addNewArticle } from "../../Services/articleServices.jsx"
 
 export const NewArticle = ({ currentUser }) => {
     const [article, setArticle] = useState({ title: "", synopsis: "", url: "", userId: currentUser, time: "", date: "" })

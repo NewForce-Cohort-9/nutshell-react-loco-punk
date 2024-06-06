@@ -46,7 +46,7 @@ export const Chat = () => {
                         <section className="tickets">
                             <header className="ticket-info">{message.message}</header>
                             <div>
-                                 <button className="edit-btn" onClick={()=>{navigate("/messages/edit")}}>Edit</button>
+                                 <button className="edit-btn" onClick={()=>{navigate(`/messages/${message.id}/edit`)}}>Edit</button>
                             </div>
                         </section>
                     )

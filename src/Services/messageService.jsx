@@ -3,3 +3,7 @@ export const getAllMessages = () => {
 }
 
 
+export const getMessageById = (id) => {
+    return fetch(`http://localhost:8088/messages/${id}`)
+    .then((res) => res.json())
+}

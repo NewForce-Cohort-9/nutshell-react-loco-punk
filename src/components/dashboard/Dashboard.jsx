@@ -1,20 +1,10 @@
-import { useEffect, useState } from "react"
-import { getAllArticles } from "../../Services/articleServices.jsx"
+import { AllArticles } from "../articles/AllArticles.jsx"
+import "./Dashboard.css"
 
 export const Dashboard = () => {
-    const [allArticles, setAllArticles] = useState([])
-
-    const getAndSetArticles = () => {
-        getAllArticles().then(articlesArray => {
-            setAllArticles(articlesArray)
-        })
-    }
-
-    useEffect(() => {
-        getAndSetArticles()
-    }, [allArticles])
-
     return (
-        <div>hello</div>
+        <section className="dashboard">
+            <AllArticles />
+        </section>
     )
 }

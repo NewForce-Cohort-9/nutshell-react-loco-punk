@@ -11,6 +11,7 @@ import {
 } from 'reactstrap';
 
 export const NavBar = () => {
+
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -25,7 +26,8 @@ export const NavBar = () => {
           <Nav className="me-auto" navbar>
             <UncontrolledDropdown nav inNavbar>
               <DropdownMenu right>
-                <DropdownItem>News</DropdownItem>
+                <DropdownItem onClick={() => {navigate("/")}}>Dashboard</DropdownItem>
+                <DropdownItem onClick={() => {navigate("/articles")}}>News</DropdownItem>
                 <DropdownItem>Tasks</DropdownItem>
                 <DropdownItem>Images</DropdownItem>
                 <DropdownItem>Events</DropdownItem>
