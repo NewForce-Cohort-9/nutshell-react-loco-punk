@@ -91,17 +91,20 @@
     {
       "id": 1,
       "userId": 3,
-      "task": "Take out garbage"
+      "task": "Take out garbage",
+      "date": "5/5/2024"
     },
     {
       "id": 2,
       "userId": 2,
-      "task": "Cut Grass"
+      "task": "Cut Grass",
+      "date": "5/7/2024"
     },
     {
       "id": 3,
       "userId": 4,
-      "task": "Clean Kitchen"
+      "task": "Clean Kitchen",
+      "date": "5/12/2024"
     }
   ],
   "images": [
