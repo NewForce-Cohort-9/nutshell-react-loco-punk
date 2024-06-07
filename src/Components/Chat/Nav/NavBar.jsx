@@ -12,13 +12,12 @@ import {
 
 
 export const NavBar = () => {
-  const navigate = useNavigate()
 
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
 
-
+  const navigate =useNavigate()
 
   return (
     <div>
@@ -33,7 +32,7 @@ export const NavBar = () => {
                 <DropdownItem>Tasks</DropdownItem>
                 <DropdownItem>Images</DropdownItem>
                 <DropdownItem>Events</DropdownItem>
-                <DropdownItem>Messages</DropdownItem>
+                <DropdownItem onClick={()=>{navigate("/messages")}}>Messages</DropdownItem>
                 {localStorage.getItem("nutshell_user")? "" : <DropdownItem onClick={() => {navigate("/login")}}>Login</DropdownItem>}
                 <DropdownItem divider />
               </DropdownMenu>
