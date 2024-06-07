@@ -12,13 +12,17 @@ export const Article = ({ article, getAndSetArticles, currentUser }) => {
 
     return (
         <>
-            <section>
-                <header>{article.title}</header>
-                <div>{article.synopsis}</div>
-                <button onClick={() => {window.location.href = `${article.url}`}}>Read More</button>
-            </section>
-            {currentUser === article.userId ? <button onClick={() => {navigate(`/articles/${article.id}/edit`)}}>Edit</button> : ""}
-            <button onClick={() => {handleArticleDelete(article.id)}}>Delete</button>
+            <article className="articleCard">
+                <section>
+                    <header>{article.title}</header>
+                    <div>{article.synopsis}</div>
+                    <button onClick={() => {window.location.href = `${article.url}`}}>Read More</button>
+                </section>
+                <footer className="articleButtons">
+                    {currentUser === article.userId ? <button onClick={() => {navigate(`/articles/${article.id}/edit`)}}>Edit</button> : ""}
+                    <button onClick={() => {handleArticleDelete(article.id)}}>Delete</button>
+                </footer>
+            </article>
         </>
     )
 }

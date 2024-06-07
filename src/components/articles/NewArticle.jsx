@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { addNewArticle } from "../../Services/articleServices.jsx"
+import "./Articles.css"
 
 export const NewArticle = ({ currentUser }) => {
     const [article, setArticle] = useState({ title: "", synopsis: "", url: "", userId: currentUser, time: "", date: "" })
@@ -20,9 +21,9 @@ export const NewArticle = ({ currentUser }) => {
     }
 
     return (
-        <form>
+        <form className="articleForm">
             <h2>Add A New Article</h2>
-            <fieldset>
+            <fieldset className="noBorder">
                 <div>
                     <label>Title:</label>
                     <input
@@ -36,7 +37,7 @@ export const NewArticle = ({ currentUser }) => {
                     />
                 </div>
             </fieldset>
-            <fieldset>
+            <fieldset className="noBorder">
                 <div>
                     <label>Synopsis:</label>
                     <input 
@@ -50,7 +51,7 @@ export const NewArticle = ({ currentUser }) => {
                     />
                 </div>
             </fieldset>
-            <fieldset>
+            <fieldset className="noBorder">
                 <div>
                     <label>URL:</label>
                     <input
@@ -64,7 +65,7 @@ export const NewArticle = ({ currentUser }) => {
                     />
                 </div>
             </fieldset>
-            <fieldset>
+            <fieldset className="noBorder">
                 <div>
                     <button onClick={handleArticleCreation}>Save Article</button>
                 </div>

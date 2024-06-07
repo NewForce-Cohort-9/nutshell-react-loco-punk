@@ -20,7 +20,6 @@ export const AllArticles = () => {
 
     useEffect(() => {
         getAndSetArticles()
-        console.log(currentUser)
     }, [])
 
 
@@ -32,6 +31,5 @@ export const AllArticles = () => {
             })}
             <button onClick={() => {navigate("/articles/new")}}>New Article</button>
         </article>
-
     )
 }
