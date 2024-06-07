@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   Collapse,
   Navbar,
@@ -9,10 +10,15 @@ import {
   DropdownItem,
 } from 'reactstrap';
 
+
 export const NavBar = () => {
+  const navigate = useNavigate()
+
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
+
+
 
   return (
     <div>
@@ -22,11 +28,13 @@ export const NavBar = () => {
           <Nav className="me-auto" navbar>
             <UncontrolledDropdown nav inNavbar>
               <DropdownMenu right>
-                <DropdownItem>News</DropdownItem>
+                <DropdownItem onClick={() => {navigate("/")}}>Dashboard</DropdownItem>
+                <DropdownItem onClick={() => {navigate("/articles")}}>News</DropdownItem>
                 <DropdownItem>Tasks</DropdownItem>
                 <DropdownItem>Images</DropdownItem>
                 <DropdownItem>Events</DropdownItem>
                 <DropdownItem>Messages</DropdownItem>
+                {localStorage.getItem("nutshell_user")? "" : <DropdownItem onClick={() => {navigate("/login")}}>Login</DropdownItem>}
                 <DropdownItem divider />
               </DropdownMenu>
             </UncontrolledDropdown>
