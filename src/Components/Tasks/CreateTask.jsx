@@ -4,20 +4,19 @@ import "./CreateTask.css"
 import { CreateNewTask } from "../../services/TaskServices.jsx"
 
 
-export const CreateTask = () => {
+export const CreateTask = ({currentUser}) => {
     const [newTask, setNewTask] = useState({})
    
 
    const handleCreate = () => {
     if (newTask.task && newTask.date) {
         const newTaskCopy = {...newTask}
-        newTaskCopy.userId=currentUser
+        newTaskCopy.userId=currentUser.id
          CreateNewTask(newTaskCopy)
     } else {
         window.alert("Please Fill Out the Description!")
     }
    }
-
     return (
         <form>
             <h1>New Task</h1>
@@ -57,7 +56,7 @@ export const CreateTask = () => {
                 <fieldset className="fieldset">
                     <div className="form-group">
                         <button 
-                        Onclick={handleCreate}
+                        onClick={handleCreate}
                         className=".form-btn:focus">Create</button>
                     </div>
                 </fieldset>

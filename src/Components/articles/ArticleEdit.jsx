@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import { getArticleById, updateArticle } from "../../Services/articleServices.jsx"
+import { getArticleById, updateArticle } from "../../services/articleServices.jsx"
 import "./Articles.css"
 
 export const ArticleEdit = () => {

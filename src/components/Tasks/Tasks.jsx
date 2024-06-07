@@ -3,22 +3,21 @@ import { getAllTasks } from "../../services/TaskServices.jsx"
 import { useNavigate } from "react-router-dom"
 import "./Tasks.css"
 
-export const TaskList = () => {
+export const TaskList = ({currentUser}) => {
     const [tasks, setTasks] = useState([])
-    const currentUser = 3
-       
+ 
     useEffect(() => {
-        getAllTasks().then(taskArray => {
-            const filterArray = taskArray.filter(task => task.userId === currentUser)//something muust compare userId with currentUser
-            console.log(filterArray)
+        getAllTasks(currentUser.id).then(taskArray => {
+            const filterArray = taskArray.filter(task => task.userId === currentUser.id)
+            setTasks(filterArray)
         })
 
 
 
-    }, [],  )
+    }, [currentUser],  )
 
     const navigate = useNavigate()
-
+    
     return (
          <div className="tasks"> <h1>Tasks</h1>
             {tasks.map(taskObj => {

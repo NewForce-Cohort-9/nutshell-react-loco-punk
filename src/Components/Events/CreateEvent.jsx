@@ -3,24 +3,15 @@ import "./CreateEvent.css"
 import { CreateNewEvent } from "../../services/EventServices.jsx"
 
 
-export const CreateEvent = () => {
+export const CreateEvent = ({currentUser}) => {
     const [newEvent, setNewEvent] = useState({})
     
     const handleMake = () => {
-        if (newEvent.event && newEvent.date && newEvent.location) {
             const newEventCopy = {...newEvent}
-            newEvent.userId=currentUser
+            newEvent.userId=currentUser.id
             CreateNewEvent(newEventCopy)
-    } else {
-        window.alert("Please Fill Out the Description")
-    }
 }
-    
-    
-    
-    
-    
-    return(
+     return(
         <form>
             <fieldset className="fieldset"><h1>New Event</h1>
             <fieldset className="fieldset">
@@ -29,13 +20,16 @@ export const CreateEvent = () => {
                         <h2>Name</h2>
                       
                         <input
-                        placeholder="Brief Description of Event"
+                        placeholder="Name of Eventt"
                         className="form-control"
                         type ="text"    
                         onChange={(event) => {
                             const newEventCopy = {...newEvent}
                             newEventCopy.name = event.target.value
                             setNewEvent(newEventCopy)
+                        console.log(newEvent)
+                        
+                        
                         }}
                        />
                  
@@ -45,32 +39,37 @@ export const CreateEvent = () => {
                     <div>
                         <label>Date</label>
                         <input 
+                         type = "text"
                         onChange={(event) => {
                             const newEventCopy = {...newEvent}
                             newEventCopy.date = event.target.value
                             setNewEvent(newEventCopy)
+                            console.log(newEvent)
                         }}
-                        type = "text"
+                       
                         />
                     </div>
-                  
+                  </fieldset>
 
-                </fieldset>
+                
                     <fieldset>
                         <div>
                             <h4>Location</h4>
                             <input 
+                             placeholder="Brief Description"
+                             className="form-control"
+                            type="text"
                             onChange={(event) => {
                                 const newEventCopy = {...newEvent}
                                 newEventCopy.location = event.target.value
                                 setNewEvent(newEventCopy)
+                                console.log(newEvent)
                             }}
-                            placeholder="Brief Description"
-                            className="form-control"
-                            type="text"/>
+                           
+                           /> 
                         </div>
                     </fieldset>
-                 </fieldset>
+                
                 <fieldset>
                     <div>
                         <button 
@@ -79,7 +78,7 @@ export const CreateEvent = () => {
                     </div>
                     
                 </fieldset>
-           
+           </fieldset>
             </fieldset>
         </form>
     )

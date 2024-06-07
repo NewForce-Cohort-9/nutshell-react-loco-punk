@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getAllArticles } from "../../Services/articleServices.jsx"
+import { getAllArticles } from "../../services/articleServices.jsx"
 import { Article } from "./Article.jsx"
 import "./Articles.css"
 import { useNavigate } from "react-router-dom"

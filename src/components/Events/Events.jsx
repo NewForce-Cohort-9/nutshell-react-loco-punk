@@ -3,18 +3,16 @@ import { getAllEvents } from "../../services/EventServices.jsx";
 import { useNavigate } from "react-router-dom";
 import "./Events.css"
 
-export const EventList = () => {
+export const EventList = ({currentUser}) => {
     const [events, setEvents] = useState([])
 
-    const currentUser = 3
-
-    useEffect(() => {
-      getAllEvents().then(eventArray => {
-       const filterArray = eventArray.filter(event => event.userId === currentUser)
-        console.log(filterArray)
+     useEffect(() => {
+      getAllEvents(currentUser.id).then(eventArray => {
+       const filterArray = eventArray.filter(event => event.userId === currentUser.id)
+        setEvents(filterArray)
       })
 
-    }, [] )
+    }, [currentUser] )
 
     const navigate = useNavigate()
 

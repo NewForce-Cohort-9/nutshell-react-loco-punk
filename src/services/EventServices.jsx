@@ -12,5 +12,5 @@ export const CreateNewEvent = (newevent) => {
             "Content-Type":"application/json"
         },
         body:JSON.stringify(newevent),
-    })
-}
+    }).then((res) => res.json())
+        }
