@@ -10,12 +10,15 @@ import {
   DropdownItem,
 } from 'reactstrap';
 
+
 export const NavBar = () => {
   const navigate = useNavigate()
 
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
+
+
 
   return (
     <div>
@@ -31,6 +34,7 @@ export const NavBar = () => {
                 <DropdownItem>Images</DropdownItem>
                 <DropdownItem>Events</DropdownItem>
                 <DropdownItem>Messages</DropdownItem>
+                {localStorage.getItem("nutshell_user")? "" : <DropdownItem onClick={() => {navigate("/login")}}>Login</DropdownItem>}
                 <DropdownItem divider />
               </DropdownMenu>
             </UncontrolledDropdown>
