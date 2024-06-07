@@ -10,12 +10,12 @@ import { ArticleEdit } from "../Components/articles/ArticleEdit.jsx"
 
 
 export const ApplicationViews = () => {
-    // const [currentUser, setCurrentUser] = useState(0)
+    const [currentUser, setCurrentUser] = useState(0)
 
-    // useEffect(() => {
-    //     setCurrentUser(4)
-    //     console.log(currentUser)
-    // }, [])
+    useEffect(() => {
+        setCurrentUser(4)
+        console.log(currentUser)
+    }, [])
 
     return (
         <Routes>
