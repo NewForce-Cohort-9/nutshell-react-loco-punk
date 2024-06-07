@@ -22,7 +22,7 @@
 import { useState, useEffect } from "react"
 import { getAllMessages } from "../../Services/messageService"
 import { useNavigate } from "react-router-dom"
-import "./chat.css"
+import "./Chat.css"
 //import css
 
 export const Chat = () => {
@@ -46,7 +46,7 @@ export const Chat = () => {
                         <section className="tickets">
                             <header className="ticket-info">{message.message}</header>
                             <div>
-                                 <button className="edit-btn" onClick={()=>{navigate(`/messages/${message.id}/edit`)}}>Edit</button>
+                                 <button className="edit-btn" onClick={()=>{Navigate(`/messages/${message.id}/edit`)}}>Edit</button>
                             </div>
                         </section>
                     )
