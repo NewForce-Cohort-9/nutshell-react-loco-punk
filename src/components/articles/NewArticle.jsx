@@ -2,8 +2,11 @@ import { useState } from "react"
 import { addNewArticle } from "../../Services/articleServices.jsx"
 import "./Articles.css"
 
-export const NewArticle = ({ currentUser }) => {
-    const [article, setArticle] = useState({ title: "", synopsis: "", url: "", userId: currentUser, time: "", date: "" })
+export const NewArticle = () => {
+    const currentUser = 4
+    const [article, setArticle] = useState({ title: "", synopsis: "", url: "", userId: currentUser, time: "", date: "", tags: [] })
+
+    console.log(currentUser)
 
     const handleArticleCreation = () => {
         if (!article.title || !article.synopsis || !article.url) {
@@ -60,6 +63,20 @@ export const NewArticle = ({ currentUser }) => {
                         onChange={(event) => {
                             const articleCopy = {...article}
                             articleCopy.url = event.target.value
+                            setArticle(articleCopy)
+                        }}
+                    />
+                </div>
+            </fieldset>
+            <fieldset className="noBorder">
+                <div>
+                    <label>Article Tags:</label>
+                    <input
+                        type="text"
+                        placeholder="Separate With Commas"
+                        onChange={(event) => {
+                            const articleCopy = {...article}
+                            articleCopy.tags.splice(0, articleCopy.tags.length, event.target.value)
                             setArticle(articleCopy)
                         }}
                     />

@@ -80,6 +80,20 @@ export const ArticleEdit = () => {
             </fieldset>
             <fieldset className="noBorder">
                 <div>
+                    <label>Article Tags:</label>
+                    <input
+                        type="text"
+                        placeholder="Separate With Commas"
+                        onChange={(event) => {
+                            const articleCopy = {...article}
+                            articleCopy.tags = event.target.value
+                            setArticle(articleCopy)
+                        }}
+                    />
+                </div>
+            </fieldset>
+            <fieldset className="noBorder">
+                <div>
                     <button onClick={handleArticleEdit}>Save</button>
                 </div>
             </fieldset>
