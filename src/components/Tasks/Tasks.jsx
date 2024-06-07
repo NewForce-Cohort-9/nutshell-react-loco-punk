@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getAllTasks } from "../../services/TaskServices.jsx"
+import { getAllTasks } from "../../Services/TaskServices.jsx"
 import { useNavigate } from "react-router-dom"
 import "./Tasks.css"
 

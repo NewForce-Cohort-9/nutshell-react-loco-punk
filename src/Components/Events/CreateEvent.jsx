@@ -1,6 +1,6 @@
 import { useState } from "react"
 import "./CreateEvent.css"
-import { CreateNewEvent } from "../../services/EventServices.jsx"
+import { CreateNewEvent } from "../../Services/EventServices.jsx"
 
 
 export const CreateEvent = ({currentUser}) => {

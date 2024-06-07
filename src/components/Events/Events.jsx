@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getAllEvents } from "../../services/EventServices.jsx";
+import { getAllEvents } from "../../Services/EventServices.jsx";
 import { useNavigate } from "react-router-dom";
 import "./Events.css"
 

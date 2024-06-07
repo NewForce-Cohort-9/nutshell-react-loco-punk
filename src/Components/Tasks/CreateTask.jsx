@@ -1,7 +1,7 @@
 
 import { useState } from "react"
 import "./CreateTask.css"
-import { CreateNewTask } from "../../services/TaskServices.jsx"
+import { CreateNewTask } from "../../Services/TaskServices.jsx"
 
 
 export const CreateTask = ({currentUser}) => {

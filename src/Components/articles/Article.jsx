@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import { deleteArticle } from "../../services/articleServices.jsx"
+import { deleteArticle } from "../../Services/articleServices.jsx"
 
 export const Article = ({ article, getAndSetArticles, currentUser }) => {
     const navigate = useNavigate()
