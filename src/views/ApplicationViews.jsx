@@ -7,11 +7,13 @@ import { NewArticle } from "../Components/articles/NewArticle.jsx"
 import { Login } from "../Components/auth/Login.jsx"
 import { Register } from "../Components/auth/Register.jsx"
 import { ArticleEdit } from "../Components/articles/ArticleEdit.jsx"
+import { Chat } from "../Components/Chat/Chat.jsx"
+import { EditMessage } from "../Components/Chat/editMessage.jsx"
+
 
 
 export const ApplicationViews = () => {
     const [currentUser, setCurrentUser] = useState({})
-
     useEffect(() => {
 
         const localNutshellUser = localStorage.getItem("nutshell_user")
@@ -46,6 +48,10 @@ export const ApplicationViews = () => {
                     <Route index element={<AllArticles />} />
                     <Route path="new" element={<NewArticle />} />
                     <Route path=":articleId/edit" element={<ArticleEdit />} />
+                </Route>
+                <Route path="messages">
+                    <Route index element={<Chat />} />
+                    <Route path=":messageId/edit" element={<EditMessage />} />
                 </Route>
                 
 
