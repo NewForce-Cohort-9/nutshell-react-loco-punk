@@ -20,10 +20,13 @@ import { EditMessage } from "../Components/Chat/editMessage.jsx"
 export const ApplicationViews = () => {
     const [currentUser, setCurrentUser] = useState({})
     useEffect(() => {
+
         const localNutshellUser = localStorage.getItem("nutshell_user")
         const currentUser = JSON.parse(localNutshellUser)
+  
         setCurrentUser(currentUser)}, [])
         console.log(currentUser)
+   
         
 
     return (
@@ -77,6 +80,6 @@ export const ApplicationViews = () => {
           
      
 
-     z</Routes>
+     </Routes>
     )
 }
