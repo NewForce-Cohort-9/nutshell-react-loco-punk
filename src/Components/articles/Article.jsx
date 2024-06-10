@@ -19,7 +19,7 @@ export const Article = ({ article, getAndSetArticles, currentUser }) => {
                     <button onClick={() => {window.location.href = `${article.url}`}}>Read More</button>
                 </section>
                 <footer className="articleButtons">
-                    {currentUser === article.userId ? <button onClick={() => {navigate(`/articles/${article.id}/edit`)}}>Edit</button> : ""}
+                    {currentUser?.id === article.userId ? <button onClick={() => {navigate(`/articles/${article.id}/edit`)}}>Edit</button> : ""}
                     <button onClick={() => {handleArticleDelete(article.id)}}>Delete</button>
                 </footer>
             </article>

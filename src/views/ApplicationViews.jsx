@@ -16,6 +16,7 @@ import { EditMessage } from "../Components/Chat/editMessage.jsx"
 
 
 
+
 export const ApplicationViews = () => {
     const [currentUser, setCurrentUser] = useState({})
     useEffect(() => {
@@ -27,6 +28,7 @@ export const ApplicationViews = () => {
         console.log(currentUser)
    
         
+
     return (
         <Routes>
             <Route
@@ -38,7 +40,6 @@ export const ApplicationViews = () => {
                     </>
                 }
             >
-                {/* <Route index element={<Dashboard />} /> */}
                 <Route index element={<Dashboard />} />
                 
                 <Route path="login">
@@ -50,15 +51,17 @@ export const ApplicationViews = () => {
                 </Route>
 
                 <Route path="articles" >
-                    <Route index element={<AllArticles />} />
-                    <Route path="new" element={<NewArticle />} />
-                    <Route path=":articleId/edit" element={<ArticleEdit />} />
+                    <Route index element={<AllArticles currentUser={currentUser} />} />
+                    <Route path="new" element={<NewArticle currentUser={currentUser} />} />
+                    <Route path=":articleId/edit" element={<ArticleEdit currentUser={currentUser} />} />
                 </Route>
+
                 <Route path="messages">
                     <Route index element={<Chat />} />
                     <Route path=":messageId/edit" element={<EditMessage />} />
                 </Route>
                 
+
 
             </Route>
 
