@@ -2,11 +2,10 @@ import { useEffect, useState } from "react"
 import { getAllArticles } from "../../Services/articleServices.jsx"
 import { Article } from "./Article.jsx"
 import "./Articles.css"
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
-export const AllArticles = () => {
+export const AllArticles = ({ currentUser }) => {
     const [allArticles, setAllArticles] = useState([])
-    const [currentUser, setCurrentUser] = useState(0)
 
     const navigate = useNavigate()
 
@@ -14,15 +13,12 @@ export const AllArticles = () => {
         getAllArticles().then(articlesArray => {
             const reverse = articlesArray.reverse()
             setAllArticles(reverse)
-            setCurrentUser(1)
         })
     }
 
-    console.log(currentUser)
-
     useEffect(() => {
         getAndSetArticles()
-    }, [])
+    }, [currentUser])
 
 
     return (

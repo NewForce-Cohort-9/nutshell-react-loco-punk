@@ -6,7 +6,7 @@
 
 .articleCard {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     width: 40%;
@@ -14,13 +14,6 @@
     margin: 2em;
     border: solid 1px black;
     border-radius: 15px;
-}
-
-.articleCardContent {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
 }
 
 .articleContainer {
@@ -38,10 +31,6 @@
     margin-left: 35%;
     border: solid 1px black;
     border-radius: 15px;
-}
-
-.articleTagList {
-    
 }
 
 input {

@@ -10,12 +10,16 @@ import { ArticleEdit } from "../Components/articles/ArticleEdit.jsx"
 
 
 export const ApplicationViews = () => {
-    const [currentUser, setCurrentUser] = useState(0)
+    const [currentUser, setCurrentUser] = useState({})
 
     useEffect(() => {
-        setCurrentUser(4)
-        console.log(currentUser)
+        const localNutshellUser = localStorage.getItem("nutshell_user")
+        const currentUser = JSON.parse(localNutshellUser)
+        setCurrentUser(currentUser)
     }, [])
+
+    console.log(currentUser)
+
 
     return (
         <Routes>
@@ -28,7 +32,6 @@ export const ApplicationViews = () => {
                     </>
                 }
             >
-                {/* <Route index element={<Dashboard />} /> */}
                 <Route index element={<Dashboard />} />
                 
                 <Route path="login">
@@ -40,12 +43,10 @@ export const ApplicationViews = () => {
                 </Route>
 
                 <Route path="articles" >
-                    <Route index element={<AllArticles />} />
-                    <Route path="new" element={<NewArticle />} />
-                    <Route path=":articleId/edit" element={<ArticleEdit />} />
+                    <Route index element={<AllArticles currentUser={currentUser} />} />
+                    <Route path="new" element={<NewArticle currentUser={currentUser} />} />
+                    <Route path=":articleId/edit" element={<ArticleEdit currentUser={currentUser} />} />
                 </Route>
-                
-
             </Route>
         </Routes>
     )
