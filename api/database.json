@@ -26,18 +26,25 @@
       "title": "Wormholes Allow Information to Escape Black Holes",
       "synopsis": "Check out this recent discovery about wormholes",
       "url": "https://www.quantamagazine.org/newfound-wormhole-allows-information-to-escape-black-holes-20171023/",
-      "userId": 4,
-      "time": "9:20:25 AM",
-      "date": "6/5/2024",
+      "userId": 1,
+      "time": "10:21:22 AM",
+      "date": "6/7/2024",
+      "tags": [
+        "Space, Cool, News"
+      ],
       "id": 1
     },
     {
       "title": "Monster Jam Trucks",
       "synopsis": "These trucks are sick!",
       "url": "https://www.nytimes.com/2024/02/06/style/monster-jam-trucks.html",
-      "userId": 4,
-      "time": "9:21:20 AM",
-      "date": "6/5/2024",
+
+      "userId": 3,
+      "time": "10:23:53 AM",
+      "date": "6/7/2024",
+      "tags": [
+        "Trucks, Flying, Cool"
+      ],
       "id": 2
     },
     {
@@ -45,8 +52,12 @@
       "synopsis": "Trucks that fly? Alright.",
       "url": "https://www.newyorker.com/magazine/2023/08/21/when-trucks-fly",
       "userId": 4,
-      "time": "9:21:40 AM",
-      "date": "6/5/2024",
+
+      "time": "10:25:10 AM",
+      "date": "6/7/2024",
+      "tags": [
+        "Trucks, Flying, News"
+      ],
       "id": 3
     }
   ],

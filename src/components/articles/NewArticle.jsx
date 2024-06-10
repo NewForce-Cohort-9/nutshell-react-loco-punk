@@ -2,8 +2,11 @@ import { useState } from "react"
 import { addNewArticle } from "../../Services/articleServices.jsx"
 import "./Articles.css"
 
-export const NewArticle = ({ currentUser }) => {
+export const NewArticle = () => {
+    const currentUser = 4
     const [article, setArticle] = useState({ title: "", synopsis: "", url: "", userId: currentUser, time: "", date: "" })
+
+    console.log(currentUser)
 
     const handleArticleCreation = () => {
         if (!article.title || !article.synopsis || !article.url) {
