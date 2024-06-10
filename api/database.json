@@ -19,16 +19,6 @@
       "id": 4,
       "username": "Will Moran",
       "email": "will@lp.com"
-    },
-    {
-      "email": "andrew1@lp.com",
-      "username": "anderww",
-      "id": 5
-    },
-    {
-      "email": "spongebob@gmail.com",
-      "username": "spongebob",
-      "id": 6
     }
   ],
   "articles": [
@@ -36,28 +26,28 @@
       "title": "Wormholes Allow Information to Escape Black Holes",
       "synopsis": "Check out this recent discovery about wormholes",
       "url": "https://www.quantamagazine.org/newfound-wormhole-allows-information-to-escape-black-holes-20171023/",
+      "userId": 4,
       "time": "9:20:25 AM",
       "date": "6/5/2024",
-      "id": 1,
-      "userId": 1
+      "id": 1
     },
     {
       "title": "Monster Jam Trucks",
       "synopsis": "These trucks are sick!",
       "url": "https://www.nytimes.com/2024/02/06/style/monster-jam-trucks.html",
+      "userId": 4,
       "time": "9:21:20 AM",
       "date": "6/5/2024",
-      "id": 2,
-      "userId": 3
+      "id": 2
     },
     {
-      "title": "Trucks That Fly",
+      "title": "Trucks that Fly",
       "synopsis": "Trucks that fly? Alright.",
       "url": "https://www.newyorker.com/magazine/2023/08/21/when-trucks-fly",
-      "time": "1:07:21 PM",
-      "date": "6/6/2024",
-      "id": 3,
-      "userId": 4
+      "userId": 4,
+      "time": "9:21:40 AM",
+      "date": "6/5/2024",
+      "id": 3
     }
   ],
   "messages": [
@@ -95,23 +85,73 @@
       "userId": 4,
       "event": "Band practice",
       "date": "6/10/2024"
+    },
+    {
+      "name": "asd;fjasd08u423",
+      "date": "3433435dtder",
+      "location": "qewrqewrqwerew",
+      "id": 4
     }
   ],
   "tasks": [
     {
       "id": 1,
       "userId": 3,
-      "task": "Take out garbage"
+      "task": "Take out garbage",
+      "date": "5/5/2024"
     },
     {
       "id": 2,
       "userId": 2,
-      "task": "Cut Grass"
+      "task": "Cut Grass",
+      "date": "5/7/2024"
     },
     {
       "id": 3,
       "userId": 4,
-      "task": "Clean Kitchen"
+      "task": "Clean Kitchen",
+      "date": "5/12/2024"
+    },
+    {
+      "task": "print dungeon",
+      "date": "Saturday 8th",
+      "id": 4
+    },
+    {
+      "task": "print monsters",
+      "date": "sunday 9th",
+      "userId": {
+        "id": 1
+      },
+      "id": 5
+    },
+    {
+      "task": "print a space marine",
+      "date": "MOnday 10th",
+      "userId": {
+        "currentUser": {
+          "id": 1
+        }
+      },
+      "id": 6
+    },
+    {
+      "task": "iajsdf;ihjadsf",
+      "date": "ijadf;ijadsf",
+      "userId": 1,
+      "id": 7
+    },
+    {
+      "task": ";lkajdsf;lijkasdf",
+      "date": "3047340834",
+      "userId": 1,
+      "id": 8
+    },
+    {
+      "task": "Print Dungeon Tiles",
+      "date": "Saturday 12th",
+      "userId": 1,
+      "id": 9
     }
   ],
   "images": [
