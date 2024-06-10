@@ -29,8 +29,12 @@ export const NavBar = () => {
               <DropdownMenu right>
                 <DropdownItem onClick={() => {navigate("/")}}>Dashboard</DropdownItem>
                 <DropdownItem onClick={() => {navigate("/articles")}}>News</DropdownItem>
-                <DropdownItem>Tasks</DropdownItem>
+                <DropdownItem
+                onClick={()=>{navigate("/tasks")}}>Tasks</DropdownItem>
                 <DropdownItem>Images</DropdownItem>
+                <DropdownItem
+                onClick={() => {navigate("/events")}}>Events</DropdownItem>
+                <DropdownItem>Messages</DropdownItem>
                 <DropdownItem>Events</DropdownItem>
                 <DropdownItem onClick={()=>{navigate("/messages")}}>Messages</DropdownItem>
                 {localStorage.getItem("nutshell_user")? "" : <DropdownItem onClick={() => {navigate("/login")}}>Login</DropdownItem>}

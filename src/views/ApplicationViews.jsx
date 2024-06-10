@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react"
 import { Outlet, Route, Routes } from "react-router-dom"
+import { TaskList } from "../Components/Tasks/Tasks.jsx"
+import { EventList} from "../Components/Events/Events.jsx"
+import { CreateEvent } from "../Components/Events/CreateEvent.jsx"
+import { CreateTask } from "../Components/Tasks/CreateTask.jsx"
 import { NavBar } from "../Components/Chat/Nav/NavBar.jsx"
 import { Dashboard } from "../Components/dashboard/Dashboard.jsx"
 import { AllArticles } from "../Components/articles/AllArticles.jsx"
@@ -18,7 +22,8 @@ export const ApplicationViews = () => {
         const localNutshellUser = localStorage.getItem("nutshell_user")
         const currentUser = JSON.parse(localNutshellUser)
         setCurrentUser(currentUser)}, [])
-
+        console.log(currentUser)
+        
     return (
         <Routes>
             <Route
@@ -53,6 +58,22 @@ export const ApplicationViews = () => {
                 
 
             </Route>
-        </Routes>
+
+            <Route path="events">
+                <Route index element ={<EventList currentUser={currentUser}/>}/>  
+                <Route path=":create"element={<CreateEvent currentUser={currentUser}/>}/>
+            </Route>
+            <Route path="tasks">
+                <Route index element={<TaskList currentUser={currentUser}/>}/>
+                <Route path=":create"element={<CreateTask currentUser={currentUser}/>}/>
+            </Route>
+     
+     
+
+      
+          
+     
+
+     z</Routes>
     )
 }
